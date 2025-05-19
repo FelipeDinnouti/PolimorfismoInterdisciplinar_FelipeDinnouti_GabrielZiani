@@ -2,4 +2,4 @@
 
 Biologia - Organelas Celulares
 Matemática - Progressões
-Física - Dinâmica
+Física - Dilatação Térmica
