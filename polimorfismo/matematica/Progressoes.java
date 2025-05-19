@@ -20,6 +20,6 @@ public abstract class Progressoes {
     }
 
     public abstract void mostrarDefinicao();
-    public abstract int calcularTermoGeral(int numTermos);
-    public abstract int calcularSomaDosTermos(int numTermos);
+    public abstract double calcularTermoGeral(int numTermos);
+    public abstract double calcularSomaDosTermos(int numTermos);
 }
