@@ -1,4 +1,4 @@
-package polimorfismo.biologia;
+package polimorfismo.matematica;
 public abstract class Progressoes {
     private int razao;
     private int primeiroTermo;

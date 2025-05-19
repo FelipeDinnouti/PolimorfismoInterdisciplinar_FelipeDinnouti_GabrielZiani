@@ -1,4 +1,4 @@
-package polimorfismo.biologia;
+package polimorfismo.matematica;
 public class ProgressaoGeometrica extends Progressoes {
 
     public void mostrarDefinicao() {
