@@ -7,6 +7,6 @@ public class Lisossomo extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("As principais funções dos Lisossomos são: \nDigestão intracelular de partículas e organelas danificadas\nReciclagem de componentes celulares\nDefesa contra microrganismos.");
+        System.out.println("As principais funções dos Lisossomos são: \n-Digestão intracelular de partículas e organelas danificadas\n-Reciclagem de componentes celulares\n-Defesa contra microrganismos.");
     };
 }

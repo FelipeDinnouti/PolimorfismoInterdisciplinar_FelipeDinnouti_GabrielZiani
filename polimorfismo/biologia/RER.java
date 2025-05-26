@@ -3,11 +3,11 @@ public class RER extends OrganelasCelulares {
 
     @Override
     public void mostrarLocalizacao(){
-        System.out.println("O retículo endoplasmático rugoso se localiza perto do retículo endoplasmático liso e em volta do núcleo.");
+        System.out.println("O retículo endoplasmático rugoso se localiza perto do retículo endoplasmático liso, do complexo golgiense e em volta do núcleo. Possui ribossomos aderidos à sua superfície externa.");
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("As principais funções do Retículo Endoplasmático Rugoso são: \nSíntese de proteínas\nTransporte de proteínas para outras organelas ou para fora da célula\nPossui ribossomos aderidos à sua superfície.");
+        System.out.println("As principais funções do Retículo Endoplasmático Rugoso são: \n-Síntese de proteínas\n-Transporte de proteínas para outras organelas ou para fora da célula\n-Possui ribossomos aderidos à sua superfície.");
 
     };
 }

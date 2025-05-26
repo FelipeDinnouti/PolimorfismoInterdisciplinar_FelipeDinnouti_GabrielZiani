@@ -7,7 +7,7 @@ public class Mitocondria extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("As principais funções das Mitocôndrias são: \nProdução de energia (ATP) por respiração celular\nRegulação do metabolismo celular\nParticipação na morte celular programada (apoptose).");
+        System.out.println("As principais funções das Mitocôndrias são: \n-Produção de energia (ATP) por respiração celular\n-Regulação do metabolismo celular\n-Participação na morte celular programada (apoptose).");
 
     };
 }
