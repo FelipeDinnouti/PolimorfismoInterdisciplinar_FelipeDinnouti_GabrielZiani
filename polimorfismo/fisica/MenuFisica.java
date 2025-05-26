@@ -22,6 +22,7 @@ public class MenuFisica {
                                 "1. Dilatação Linear\n" +
                                 "2. Dilatação Superficial\n" +
                                 "3. Dilatação Volumétrica\n" +
+                                "0. Voltar ao menu principal\n" +
                                 "\nSelecione uma opção: ");
 
             int op = Main.scanner.nextInt();
@@ -49,9 +50,10 @@ public class MenuFisica {
                                 "1. Mostrar definição\n" + 
                                 "2. Calcular dilatação\n" + 
                                 "3. Exercício\n" + 
-                                "0. Sair" + "\nSelecione uma opção: ");
+                                "0. Voltar\n" + "\nSelecione uma opção: ");
 
             op = Main.scanner.nextInt();
+            Main.scanner.nextLine();
             
             switch (op) {
                 case 1:
@@ -69,13 +71,13 @@ public class MenuFisica {
                     // Exercicio
                     int tamanhoTrem = (int) (5+(Math.random()*10));
                     int variacaoTemperatura = (int) (20+(Math.random()*20));
-                    float coeficiente = (int) (10+(Math.random()*10));
+                    int coeficiente = (int) (10+(Math.random()*10));
 
-                    dilatacao.setCoeficienteDeDilatacao(coeficiente*(10^-6));
+                    dilatacao.setCoeficienteDeDilatacao(coeficiente*(Math.pow(10, -1)));
                     dilatacao.setVariacaoTemperatura(variacaoTemperatura);
 
-                    System.out.println(String.format("\n\n\nExercício:\n\nUm trilho de trem de %d metros tem seu comprimento alterado devido à variação de %d°C ao longo do dia." +
-                                                    "Possuindo um coeficiente de dilatação linear de %dE-6 ºC⁻¹, determine o comprimento final do trilho.\n\nSua resposta (em metros): ", tamanhoTrem, variacaoTemperatura, coeficiente));
+                    System.out.print(String.format("\n\n\nExercício:\n\nUm trilho de trem de %d metros tem seu comprimento alterado devido à variação de %d°C ao longo do dia." +
+                                                    "Possuindo um coeficiente de dilatação linear de %dE-1 ºC⁻¹, determine o comprimento final do trilho.\n\nSua resposta (em metros): ", tamanhoTrem, variacaoTemperatura, coeficiente));
                     
                     String respostaCerta = (tamanhoTrem + dilatacao.calcularDilatacao(tamanhoTrem)) + "m";
                     String respostaUsuario = Main.scanner.nextLine().trim();
