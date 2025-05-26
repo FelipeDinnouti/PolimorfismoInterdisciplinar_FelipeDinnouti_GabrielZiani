@@ -8,7 +8,7 @@ public class MenuFisica {
         boolean pararDeEstudar = false;
 
         do {
-            System.out.print("Escolha uma tipo de dilatação para estudar:\n" +
+            System.out.print("\n\n\nEscolha uma tipo de dilatação para estudar:\n" +
                                 "1. Dilatação Linear\n" +
                                 "2. Dilatação Superficial\n" +
                                 "3. Dilatação Volumétrica\n" +
@@ -33,7 +33,7 @@ public class MenuFisica {
                     return; // Sai do menu 
                 default:
                     System.out.println("Opção inválida\n");
-                    break;
+                    continue; // Continua o loop
             }
 
             System.out.print("\n\nComo você quer estudar esse tipo de dilatação?\n" +
@@ -51,14 +51,27 @@ public class MenuFisica {
                     break;
                 case 2:
                     System.out.print("\n\n\nPara o cálculo da dilatação, insira a unidade inicial: ");
-                    float unidadeInicial = Main.scanner.nextFloat();
-                    double resultado = dilatacao.calcularDilatacao(unidadeInicial);
+                    // Variáveis locais para o cálculo
+                    float calculoTamanhoInicial = Main.scanner.nextFloat();
+                    Main.scanner.nextLine();
+                    
+                    System.out.print("\nInsira a variação de temperatura: ");
+                    int calculoVariacaoTemperatura = Main.scanner.nextInt();
+                    Main.scanner.nextLine();
+
+                    System.out.print("\nInsira o coefienciente de dilatação do material (número decimal com vírgula): ");
+                    float calculoCoeficienteDeDilatacao = Main.scanner.nextFloat();
+                    Main.scanner.nextLine();
+                    
+                    dilatacao.setCoeficienteDeDilatacao(calculoCoeficienteDeDilatacao);
+                    dilatacao.setVariacaoTemperatura(calculoVariacaoTemperatura);
+                    double resultado = dilatacao.calcularDilatacao(calculoTamanhoInicial);
 
                     System.out.println("\n\nResultado: " + resultado + "\n");
 
                     break;
                 case 3:
-                    // Exercicio
+                    // TODO: Exercicio para cada tipo de dilatação diferente - Só tem um exercício de dilatação linear (talvez colocar o exercicio dentro da classe)
                     int tamanhoTrem = (int) (5+(Math.random()*10));
                     int variacaoTemperatura = (int) (20+(Math.random()*20));
                     int coeficiente = (int) (10+(Math.random()*10));
@@ -82,6 +95,7 @@ public class MenuFisica {
                     System.out.println("\nVoltando...");
                     break;
                 default:
+                    System.out.println("Opção Inválida");
                     break;
             }
 
