@@ -7,6 +7,6 @@ public class ComplexoDeGolgi extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("O complexo de golgi é responsável pelo armazenamento, transformação e exportação de substâncias nas células.");
+        System.out.println("As principais funções do Complexo de Golgi são: \nModificação, empacotamento e distribuição de proteínas e lipídios\nFormação de lisossomos\nProdução de vesículas de secreção.");
     };
 }

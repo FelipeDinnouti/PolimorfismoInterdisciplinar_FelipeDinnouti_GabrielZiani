@@ -7,6 +7,6 @@ public class MembranaPlasmatica extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("A membrana plasmática é responsável por controlar a entrada e saída de substâncias.");
+        System.out.println("As principais funções da Membrana Plasmática são: \nDelimita a célula\nControla a entrada e saída de substâncias\nComunicação com o meio externo\nReconhecimento celular.");
     };
 }

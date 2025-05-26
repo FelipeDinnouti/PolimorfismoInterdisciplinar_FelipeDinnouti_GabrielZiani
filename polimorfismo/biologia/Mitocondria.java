@@ -7,6 +7,7 @@ public class Mitocondria extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("A mitocôndria é responsável por fazer respiração celular, produzir ATP e consequentemente gerar energia para o organismo.");
+        System.out.println("As principais funções das Mitocôndrias são: \nProdução de energia (ATP) por respiração celular\nRegulação do metabolismo celular\nParticipação na morte celular programada (apoptose).");
+
     };
 }

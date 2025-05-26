@@ -7,6 +7,6 @@ public class Ribossomo extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("Os ribossomos são responsáveis por realizar a Síntese de proteínas na célula.");
+        System.out.println("As principais funções dos Ribossomos são: \nSíntese de proteínas\nTradução da informação genética do RNA mensageiro\nPodem estar livres no citoplasma ou ligados ao retículo endoplasmático.");
     };
 }

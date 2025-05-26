@@ -7,6 +7,6 @@ public class Lisossomo extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("Os ribossomos são responsáveis por realizar a digestão intracelular.");
+        System.out.println("As principais funções dos Lisossomos são: \nDigestão intracelular de partículas e organelas danificadas\nReciclagem de componentes celulares\nDefesa contra microrganismos.");
     };
 }

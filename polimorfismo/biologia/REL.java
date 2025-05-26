@@ -7,6 +7,7 @@ public class REL extends OrganelasCelulares {
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("O retículo endoplasmático liso é responsável por produzir lipídeos (especialmente os fosfolipídeos) e destoxificação do organismo.");
+        System.out.println("As principais funções do Retículo Endoplasmático Liso são: \nSíntese de lipídios\nDesintoxicação de substâncias químicas\nArmazenamento de íons cálcio.");
+
     };
 }
