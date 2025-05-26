@@ -2,8 +2,8 @@ package polimorfismo.biologia;
 import java.util.Random;
 import java.util.Scanner;
 
-public class AtividadeBiologia {
-    public static void main (String[] args) {
+public class MenuBiologia {
+    public static void menu () {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int op;
@@ -19,10 +19,11 @@ public class AtividadeBiologia {
 
         
         do {
-            System.out.println("Vamos estudar e treinar os conhecimentos adquiridos sobre Organelas Celulares!");
-            System.out.println("  1 - Estudar matéria \n 2 - Exercício 01: Mistério da Organela (Função) \n 3 - Exercício 02: Mistério da Organela (Localização) \n  4 - Sair");
-            System.out.print("Digite uma opção: ");
+            System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre Organelas Celulares!");
+            System.out.println("1. Estudar matéria \n2. Exercício 01: Mistério da Organela (Função) \n3. Exercício 02: Mistério da Organela (Localização) \n4 - Sair");
+            System.out.print("\nDigite uma opção: ");
             op = scanner.nextInt();
+            scanner.nextLine();
             
             switch (op) {
                 case 1:
@@ -40,7 +41,7 @@ public class AtividadeBiologia {
                     System.out.println("Agora, estudaremos uma por uma, conhecendo suas principais funções e onde elas se localizam.");
                     System.out.print("Deseja prosseguir? (S/N): ");
                     String prosseguir = scanner.nextLine();
-                    if (prosseguir == "S") {
+                    if (prosseguir.equals("S")) {
                         System.out.println("Agora, serão apresentadas as funções e a localizacação de cada Organela Celular.");
                         System.out.println("- Mitocôndria:");
                         mitocondria.mostrarFuncao();

@@ -3,16 +3,6 @@ package polimorfismo.fisica;
 import polimorfismo.Main;
 
 public class MenuFisica {
-    static void menuDilatacaoLinear() {
-
-    }
-    static void menuDilatacaoSuperficie() {
-
-    }
-    static void menuDilatacaoVolumetrica() {
-
-    }
-
     public static void menu() {
 
         boolean pararDeEstudar = false;
@@ -80,7 +70,7 @@ public class MenuFisica {
                                                     "Possuindo um coeficiente de dilatação linear de %dE-1 ºC⁻¹, determine o comprimento final do trilho.\n\nSua resposta (em metros): ", tamanhoTrem, variacaoTemperatura, coeficiente));
                     
                     String respostaCerta = (tamanhoTrem + dilatacao.calcularDilatacao(tamanhoTrem)) + "m";
-                    String respostaUsuario = Main.scanner.nextLine().trim();
+                    String respostaUsuario = Main.scanner.nextLine().trim(); // Sanitização do input
 
                     if (respostaUsuario.equals(respostaCerta)) {
                         System.out.println("\nMuito bem! Recebill! Você acertou!\n");

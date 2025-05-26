@@ -4,8 +4,8 @@ import java.nio.file.attribute.AttributeView;
 import java.util.Scanner;
 
 import polimorfismo.matematica.ProgressaoHarmonica;
-
-import polimorfismo.fisica.*;
+import polimorfismo.biologia.MenuBiologia;
+import polimorfismo.fisica.MenuFisica;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
@@ -21,27 +21,7 @@ public class Main {
     }
 
     static void biologia() {
-        System.out.print("Escolha um tema sobre biologia celular para estudar: \n" + 
-                            "1. Complexo de Golgi\n" +
-                            "2. Lisossomo\n" +
-                            "3. Mitocôndria\n" +
-                            "4. Núcleo\n" +
-                            "5. Organelas Celulares\n" +
-                            "6. Retículo Endoplasmático Liso\n" +
-                            "7. Retículo Endoplasmático Rugoso\n" +
-                            "8. Ribossomo\n" +
-                            "0. Sair\n" +
-                            "\nSelecione uma opção: ");
-        int op = scanner.nextInt();
-
-        switch (op) {
-            case 0:
-                
-                break;
-        
-            default:
-                break;
-        }
+        MenuBiologia.menu();
     }
     static void fisica() {
         MenuFisica.menu();
