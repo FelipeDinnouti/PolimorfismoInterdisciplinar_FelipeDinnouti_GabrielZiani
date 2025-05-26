@@ -3,10 +3,10 @@ public class Ribossomo extends OrganelasCelulares {
 
     @Override
     public void mostrarLocalizacao(){
-        System.out.println("Os ribossomos se localizam sobre o Retículo Endoplasmático Rugoso.");
+        System.out.println("Os ribossomos se localizam sobre o Retículo Endoplasmático Rugoso ou dispersos no citoplasma.");
     };
     @Override
     public void mostrarFuncao(){
-        System.out.println("As principais funções dos Ribossomos são: \nSíntese de proteínas\nTradução da informação genética do RNA mensageiro\nPodem estar livres no citoplasma ou ligados ao retículo endoplasmático.");
+        System.out.println("As principais funções dos Ribossomos são: \n-Síntese de proteínas\n-Tradução da informação genética do RNA mensageiro\n-Podem estar livres no citoplasma ou ligados ao retículo endoplasmático.");
     };
 }
