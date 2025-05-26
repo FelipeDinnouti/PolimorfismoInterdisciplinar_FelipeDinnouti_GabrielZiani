@@ -19,6 +19,15 @@ public abstract class Progressoes {
         this.primeiroTermo = primeiroTermo;
     }
 
+    public void printTermos(int n) {
+        System.out.println("Calculando termos: ");
+        for (int i = 0; i<n; i++) {
+            System.out.print(i + ": "); 
+            double result = calcularTermoGeral(i);
+            System.out.print(" = " + result + "\n");
+        }
+    }
+
     public abstract void mostrarDefinicao();
     public abstract double calcularTermoGeral(int numTermos);
     public abstract double calcularSomaDosTermos(int numTermos);
