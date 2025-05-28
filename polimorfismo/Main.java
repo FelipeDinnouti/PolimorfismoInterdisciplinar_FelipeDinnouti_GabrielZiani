@@ -21,7 +21,7 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
     
     public static int escolherMateria() {
-        System.out.print("Bem vindo ao sistema educional" + ANSI_PURPLE + " Zabriel Giani! " + ANSI_RESET + "Matérias disponíveis\n" + 
+        System.out.print("Bem vindo ao sistema educional" + ANSI_PURPLE + " Zinnouti! " + ANSI_RESET + "Matérias disponíveis\n" + 
                             "1. Biologia\n" +
                             "2. Física\n" +
                             "3. Matemática\n" +

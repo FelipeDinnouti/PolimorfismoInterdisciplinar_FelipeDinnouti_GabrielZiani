@@ -59,7 +59,7 @@ public class MenuFisica {
                     int calculoVariacaoTemperatura = Main.scanner.nextInt();
                     Main.scanner.nextLine();
 
-                    System.out.print("\nInsira o coefienciente de dilatação do material (número decimal com vírgula): ");
+                    System.out.print("\nInsira o coeficiente de dilatação do material (número decimal com vírgula): ");
                     float calculoCoeficienteDeDilatacao = Main.scanner.nextFloat();
                     Main.scanner.nextLine();
                     

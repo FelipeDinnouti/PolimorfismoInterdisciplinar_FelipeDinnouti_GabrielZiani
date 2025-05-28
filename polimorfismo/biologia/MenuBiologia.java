@@ -8,14 +8,14 @@ public class MenuBiologia {
         Random random = new Random();
         int op;
 
-        Mitocondria mitocondria = new Mitocondria();
-        Nucleo nucleo = new Nucleo();
-        RER rer = new RER();
-        REL rel = new REL();
-        ComplexoDeGolgi golgi = new ComplexoDeGolgi();
-        Lisossomo lisossomo = new Lisossomo();
-        Ribossomo ribossomo = new Ribossomo();
-        MembranaPlasmatica membrana = new MembranaPlasmatica();
+        OrganelasCelulares mitocondria = new Mitocondria();
+        OrganelasCelulares nucleo = new Nucleo();
+        OrganelasCelulares rer = new RER();
+        OrganelasCelulares rel = new REL();
+        OrganelasCelulares golgi = new ComplexoDeGolgi();
+        OrganelasCelulares lisossomo = new Lisossomo();
+        OrganelasCelulares ribossomo = new Ribossomo();
+        OrganelasCelulares membrana = new MembranaPlasmatica();
 
         
         do {
