@@ -3,6 +3,7 @@ package polimorfismo;
 import java.nio.file.attribute.AttributeView;
 import java.util.Scanner;
 
+import polimorfismo.matematica.MenuMatematica;
 import polimorfismo.matematica.ProgressaoHarmonica;
 import polimorfismo.biologia.MenuBiologia;
 import polimorfismo.fisica.MenuFisica;
@@ -37,7 +38,7 @@ public class Main {
         MenuFisica.menu();
     }
     static void matematica() {
-
+        MenuMatematica.menu();
     }
     
     public static void main(String[] args) {
