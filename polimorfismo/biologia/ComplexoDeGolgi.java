@@ -1,6 +1,7 @@
 package polimorfismo.biologia;
 public class ComplexoDeGolgi extends OrganelasCelulares {
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarLocalizacao(){
         System.out.println("O complexo de golgi se localiza entre o núcleo e a membrana plasmática. Ele se situa próximo ao retículo endoplasmático, no citoplasma.");

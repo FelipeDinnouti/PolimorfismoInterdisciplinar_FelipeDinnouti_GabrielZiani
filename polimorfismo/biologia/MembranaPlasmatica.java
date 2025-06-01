@@ -1,6 +1,7 @@
 package polimorfismo.biologia;
 public class MembranaPlasmatica extends OrganelasCelulares {
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarLocalizacao(){
         System.out.println("A membrana plasmática se localiza em volta da célula. Ela separa o interior celular do meio extracelular.");

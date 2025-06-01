@@ -1,6 +1,7 @@
 package polimorfismo.fisica;
 
 public class DilatacaoSuperficial extends DilatacaoTermica {
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarDefinicao() {
         System.out.println("\nDefinição de Dilatação Superficial:\nA dilatação superficial considera a dilatação sofrida por uma determinada superfície. É o que acontece, por exemplo, com uma chapa de metal delgada.");
@@ -11,12 +12,4 @@ public class DilatacaoSuperficial extends DilatacaoTermica {
     public double calcularDilatacao(double areaInicial) {
         return (areaInicial * getCoeficienteDeDilatacao() * getVariacaoTemperatura());
     };
-    @Override
-    public void exercicio1() {
-        System.out.println("");
-    }
-    @Override
-    public void exercicio2() {
-        System.out.println("");
-    }
 }

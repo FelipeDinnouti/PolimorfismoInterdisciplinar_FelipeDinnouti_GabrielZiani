@@ -1,6 +1,7 @@
 package polimorfismo.biologia;
 public class Ribossomo extends OrganelasCelulares {
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarLocalizacao(){
         System.out.println("Os ribossomos se localizam sobre o Retículo Endoplasmático Rugoso ou dispersos no citoplasma.");

@@ -1,5 +1,6 @@
 package polimorfismo.biologia;
 public abstract class OrganelasCelulares {
+    // atributos
     private String nome;
     private String funcao;
 
@@ -19,6 +20,7 @@ public abstract class OrganelasCelulares {
         this.funcao = funcao;
     }
     
+    // métodos abstratos
     public abstract void mostrarLocalizacao();
     public abstract void mostrarFuncao();
 }

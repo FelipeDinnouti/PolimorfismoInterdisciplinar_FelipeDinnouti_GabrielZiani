@@ -1,10 +1,12 @@
 package polimorfismo.matematica;
 public class ProgressaoAritmetica extends Progressoes {
 
+    // construtor
     public ProgressaoAritmetica (int razao, int primeiroTermo) {
         super(razao, primeiroTermo);
     }
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarDefinicao() {
         System.out.println("Uma progressão aritmética é uma sequência formada por termos que se diferenciam um do outro por um valor constante, que recebe o nome de razão.");
@@ -15,6 +17,7 @@ public class ProgressaoAritmetica extends Progressoes {
         System.out.println("\nSoma dos n termos: Sn = (a1 + an) * n / 2");
         System.out.println("Em que: 'Sn' é a soma dos termos, 'a1' é o primeiro termo, 'an' é o termo geral e 'n' representa o número de termos.");
     };
+    
     @Override
     public double calcularTermoGeral(int numTermos) {
         return (getPrimeiroTermo()) + ((numTermos - 1) * getRazao());

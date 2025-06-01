@@ -1,10 +1,12 @@
 package polimorfismo.matematica;
 public class ProgressaoGeometrica extends Progressoes {
     
+    // construtor
     public ProgressaoGeometrica (int razao, int primeiroTermo) {
         super(razao, primeiroTermo);
     }
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarDefinicao() {
         System.out.println("Uma progressão geométrica é formada quando uma sequência tem um fator multiplicador resultado da divisão de dois termos consecutivos, chamada de razão comum.");

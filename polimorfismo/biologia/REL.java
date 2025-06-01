@@ -1,6 +1,7 @@
 package polimorfismo.biologia;
 public class REL extends OrganelasCelulares {
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarLocalizacao(){
         System.out.println("O retículo endoplasmático liso se localiza perto do retículo endoplasmático rugoso. Ele não possui ribossomos na sua membrana.");

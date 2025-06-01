@@ -1,6 +1,7 @@
 package polimorfismo.fisica;
 
 public abstract class DilatacaoTermica {
+    // atributos
     private int variacaoTemperatura;
     private double coeficienteDeDilatacao;
 
@@ -20,8 +21,7 @@ public abstract class DilatacaoTermica {
         this.coeficienteDeDilatacao = coeficienteDeDilatacao;
     }
 
+    // métodos abstratos
     public abstract void mostrarDefinicao();
     public abstract double calcularDilatacao(double unidadeInicial);
-    public abstract void exercicio1();
-    public abstract void exercicio2();
 }

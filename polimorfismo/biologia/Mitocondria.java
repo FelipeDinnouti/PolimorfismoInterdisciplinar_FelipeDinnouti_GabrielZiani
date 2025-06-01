@@ -1,6 +1,7 @@
 package polimorfismo.biologia;
 public class Mitocondria extends OrganelasCelulares {
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarLocalizacao(){
         System.out.println("As mitocôndrias se localizam dispersas pelo citoplasma celular.");

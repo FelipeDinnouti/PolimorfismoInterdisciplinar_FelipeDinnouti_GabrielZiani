@@ -1,10 +1,12 @@
 package polimorfismo.matematica;
 public class ProgressaoHarmonica extends Progressoes {
 
+    // construtor
     public ProgressaoHarmonica (int razao, int primeiroTermo) {
         super(razao, primeiroTermo);
     }
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarDefinicao() {
         System.out.println("Uma progressão harmónica é uma sequência de números onde o inverso de cada termo forma uma progressão aritmética. Isso significa que a razão entre os termos inversos é constante. ");

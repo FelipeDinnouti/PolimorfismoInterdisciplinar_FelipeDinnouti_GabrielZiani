@@ -1,6 +1,7 @@
 package polimorfismo.biologia;
 public class Nucleo extends OrganelasCelulares {
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarLocalizacao(){
         System.out.println("O núcleo se localiza no centro do citoplasma celular. Ele é rodeado por uma membrana dupla chamada envelope nuclear.");

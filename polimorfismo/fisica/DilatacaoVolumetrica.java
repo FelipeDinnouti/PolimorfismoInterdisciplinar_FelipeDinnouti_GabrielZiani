@@ -1,6 +1,8 @@
 package polimorfismo.fisica;
 
 public class DilatacaoVolumetrica extends DilatacaoTermica {
+
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarDefinicao() {
         System.out.println("\nDefinição de Dilatação Volumétrica:\nA dilatação volumétrica resulta do aumento no volume de um corpo, acontecendo, por exemplo, com uma barra de ouro.");
@@ -11,12 +13,4 @@ public class DilatacaoVolumetrica extends DilatacaoTermica {
     public double calcularDilatacao(double volumeInicial) {
         return (volumeInicial * getCoeficienteDeDilatacao() * getVariacaoTemperatura());
     };
-    @Override
-    public void exercicio1() {
-        System.out.println("");
-    }
-    @Override
-    public void exercicio2() {
-        System.out.println("");
-    }
 }

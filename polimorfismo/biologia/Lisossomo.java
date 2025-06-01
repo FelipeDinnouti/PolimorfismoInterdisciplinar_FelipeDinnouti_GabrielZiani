@@ -1,6 +1,7 @@
 package polimorfismo.biologia;
 public class Lisossomo extends OrganelasCelulares {
 
+    // métodos abstratos da classe mãe
     @Override
     public void mostrarLocalizacao(){
         System.out.println("Os lisossomos se localizam dispersos no citoplasma de células eucarióticas.");

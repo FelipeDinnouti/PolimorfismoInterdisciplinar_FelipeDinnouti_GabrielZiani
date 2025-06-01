@@ -1,8 +1,10 @@
 package polimorfismo.matematica;
 public abstract class Progressoes {
+    // atributos
     private int razao;
     private int primeiroTermo;
 
+    // construtor
     public Progressoes (int razao, int primeiroTermo) {
         this.razao = razao;
         this.primeiroTermo = primeiroTermo;
@@ -24,6 +26,7 @@ public abstract class Progressoes {
         this.primeiroTermo = primeiroTermo;
     }
 
+    // métodos abstratos
     public abstract void mostrarDefinicao();
     public abstract double calcularTermoGeral(int numTermos);
     public abstract double calcularSomaDosTermos(int numTermos);
