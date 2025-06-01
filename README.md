@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-O **Sistema Educacional Zinnouti** consiste em um sistema que permite que alunos estudem as disciplinas de ensino médio de forma lúdica e divertida. O projeto foi desenvolvido integralmente com a linguagem **Java**, utilizando conceitos de Orientação a Objetos, como **herança e polimorfismo**.
+O **Sistema Educacional Zinnouti** consiste em um sistema que permite que alunos estudem as disciplinas de ensino médio de forma lúdica e divertida. O projeto foi desenvolvido integralmente com a linguagem **Java**, utilizando conceitos de Orientação a Objetos, principalmente o **polimorfismo**.
 
 As disciplinas escolhidas para compor o sistema foram **Biologia**, **Matemática** e **Física**. Os assuntos abordados dentro dessas disciplinas são:
 1. Biologia - Organelas Celulares;
