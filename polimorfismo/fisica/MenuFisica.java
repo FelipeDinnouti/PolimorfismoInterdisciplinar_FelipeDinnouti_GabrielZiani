@@ -8,6 +8,7 @@ public class MenuFisica {
         boolean pararDeEstudar = false;
 
         do {
+            System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre Dilatação Térmica!");
             System.out.print("\n\n\nEscolha uma tipo de dilatação para estudar:\n" +
                                 "1. Dilatação Linear\n" +
                                 "2. Dilatação Superficial\n" +
@@ -47,6 +48,7 @@ public class MenuFisica {
             
             switch (op) {
                 case 1:
+                    System.out.println("\nVocê selecionou: Mostrar Definição.");
                     dilatacao.mostrarDefinicao();
                     break;
                 case 2:

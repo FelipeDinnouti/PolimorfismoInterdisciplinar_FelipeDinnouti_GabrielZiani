@@ -1,5 +1,6 @@
 package polimorfismo.matematica;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,13 +10,17 @@ public class MenuMatematica {
         Random random = new Random();
         int op;
 
-        Progressoes PA = new ProgressaoAritmetica();
-        Progressoes PG = new ProgressaoGeometrica();
-        Progressoes PH = new ProgressaoHarmonica();
+        Progressoes PA = new ProgressaoAritmetica(0,0);
+        Progressoes PG = new ProgressaoGeometrica(0,0);
+        Progressoes PH = new ProgressaoHarmonica(0,0);
+
+        ArrayList<ProgressaoAritmetica> listaPA = new ArrayList<>();
+        ArrayList<ProgressaoGeometrica> listaPG = new ArrayList<>();
+        ArrayList<ProgressaoHarmonica> listaPH = new ArrayList<>();
         
         do {
             System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre Progressões!");
-            System.out.println("1. Estudar matéria \n2. Exercício: Trilha Progressiva do Everest \n3. Verificador de Progressão \n4 - Sair");
+            System.out.println("1 - Estudar matéria \n2 - Exercício: Trilha Progressiva do Everest \n3 - Verificador de Progressão \n4 - Visualizar progressões registradas \n5 - Sair");
             System.out.print("\nDigite uma opção: ");
             op = scanner.nextInt();
             scanner.nextLine();
@@ -181,43 +186,47 @@ public class MenuMatematica {
                     
                     switch (tipoProgressao) {
                         case 1:
+                            ProgressaoAritmetica pa1 = new ProgressaoAritmetica(0,0);
                             System.out.print("Digite o tipo de cálculo realizado (Cálculo do Termo Geral: '1' / Soma dos Termos: '2'): ");
                             int tipoCalculo = scanner.nextInt();
 
                             switch (tipoCalculo) {
                                 case 1:
+                                    
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    PA.setPrimeiroTermo(scanner.nextInt());
+                                    pa1.setPrimeiroTermo(scanner.nextInt());
                                     System.out.print("Digite a razão: ");
-                                    PA.setRazao(scanner.nextInt());
+                                    pa1.setRazao(scanner.nextInt());
                                     System.out.print("Digite o número de termos: ");
                                     int numTermos = scanner.nextInt();
                                     System.out.print("Agora, digite qual o resultado do Termo Geral obtido em seus cálculos: ");
                                     int resultado = scanner.nextInt();
+                                    listaPA.add(pa1);
 
-                                    if (PA.calcularTermoGeral(numTermos) == resultado) {
-                                        System.out.println("\nSeus cálculos estão corretos! O Termo Geral dessa progressão é "+ PA.calcularTermoGeral(numTermos) +".");
+                                    if (pa1.calcularTermoGeral(numTermos) == resultado) {
+                                        System.out.println("\nSeus cálculos estão corretos! O Termo Geral dessa progressão é "+ pa1.calcularTermoGeral(numTermos) +".");
                                     }
                                     else {
-                                        System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + PA.calcularTermoGeral(numTermos) + ".");
+                                        System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + pa1.calcularTermoGeral(numTermos) + ".");
                                     }
                                 break;
                                 case 2:
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    PA.setPrimeiroTermo(scanner.nextInt());
+                                    pa1.setPrimeiroTermo(scanner.nextInt());
                                     System.out.print("Digite a razão: ");
-                                    PA.setRazao(scanner.nextInt());
+                                    pa1.setRazao(scanner.nextInt());
                                     System.out.print("Digite o número de termos: ");
                                     numTermos = scanner.nextInt();
-                                    PA.calcularTermoGeral(numTermos);
+                                    pa1.calcularTermoGeral(numTermos);
                                     System.out.print("Agora, digite qual o resultado da Soma dos Termos obtido em seus cálculos: ");
                                     resultado = scanner.nextInt();
+                                    listaPA.add(pa1);
 
-                                    if (PA.calcularSomaDosTermos(numTermos) == resultado) {
-                                        System.out.println("\nSeus cálculos estão corretos! A Soma dos Termos dessa progressão é "+ PA.calcularSomaDosTermos(numTermos) +".");
+                                    if (pa1.calcularSomaDosTermos(numTermos) == resultado) {
+                                        System.out.println("\nSeus cálculos estão corretos! A Soma dos Termos dessa progressão é "+ pa1.calcularSomaDosTermos(numTermos) +".");
                                     }
                                     else {
-                                        System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + PA.calcularSomaDosTermos(numTermos) + ".");
+                                        System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + pa1.calcularSomaDosTermos(numTermos) + ".");
                                     }
                                 break;
                             
@@ -226,42 +235,45 @@ public class MenuMatematica {
                             }
                         break;
                         case 2:
+                            ProgressaoGeometrica pg1 = new ProgressaoGeometrica(0,0);
                             System.out.print("Digite o tipo de cálculo realizado (Cálculo do Termo Geral: '1' / Soma dos Termos: '2'): ");
                             tipoCalculo = scanner.nextInt();
 
                             switch (tipoCalculo) {
                                 case 1:
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    PG.setPrimeiroTermo(scanner.nextInt());
+                                    pg1.setPrimeiroTermo(scanner.nextInt());
                                     System.out.print("Digite a razão: ");
-                                    PG.setRazao(scanner.nextInt());
+                                    pg1.setRazao(scanner.nextInt());
                                     System.out.print("Digite o número de termos: ");
                                     int numTermos = scanner.nextInt();
                                     System.out.print("Agora, digite qual o resultado do Termo Geral obtido em seus cálculos: ");
                                     int resultado = scanner.nextInt();
+                                    listaPG.add(pg1);
 
-                                    if (PG.calcularTermoGeral(numTermos) == resultado) {
-                                        System.out.println("\nSeus cálculos estão corretos! O Termo Geral dessa progressão é "+ PG.calcularTermoGeral(numTermos) +".");
+                                    if (pg1.calcularTermoGeral(numTermos) == resultado) {
+                                        System.out.println("\nSeus cálculos estão corretos! O Termo Geral dessa progressão é "+ pg1.calcularTermoGeral(numTermos) +".");
                                     }
                                     else {
-                                        System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + PG.calcularTermoGeral(numTermos) + ".");
+                                        System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + pg1.calcularTermoGeral(numTermos) + ".");
                                     }
                                 break;
                                 case 2:
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    PG.setPrimeiroTermo(scanner.nextInt());
+                                    pg1.setPrimeiroTermo(scanner.nextInt());
                                     System.out.print("Digite a razão: ");
-                                    PG.setRazao(scanner.nextInt());
+                                    pg1.setRazao(scanner.nextInt());
                                     System.out.print("Digite o número de termos: ");
                                     numTermos = scanner.nextInt();
                                     System.out.print("Agora, digite qual o resultado da Soma dos Termos obtido em seus cálculos: ");
                                     resultado = scanner.nextInt();
+                                    listaPG.add(pg1);
 
-                                    if (PG.calcularSomaDosTermos(numTermos) == resultado) {
-                                        System.out.println("\nSeus cálculos estão corretos! A Soma dos Termos dessa progressão é "+ PG.calcularSomaDosTermos(numTermos) +".");
+                                    if (pg1.calcularSomaDosTermos(numTermos) == resultado) {
+                                        System.out.println("\nSeus cálculos estão corretos! A Soma dos Termos dessa progressão é "+ pg1.calcularSomaDosTermos(numTermos) +".");
                                     }
                                     else {
-                                        System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + PG.calcularSomaDosTermos(numTermos) + ".");
+                                        System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + pg1.calcularSomaDosTermos(numTermos) + ".");
                                     }
                                 break;
                             
@@ -270,42 +282,45 @@ public class MenuMatematica {
                             }
                         break;
                         case 3:
+                            ProgressaoHarmonica ph1 = new ProgressaoHarmonica(0,0);
                             System.out.print("Digite o tipo de cálculo realizado (Cálculo do Termo Geral: '1' / Soma dos Termos: '2'): ");
                             tipoCalculo = scanner.nextInt();
 
                             switch (tipoCalculo) {
                                 case 1:
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    PH.setPrimeiroTermo(scanner.nextInt());
+                                    ph1.setPrimeiroTermo(scanner.nextInt());
                                     System.out.print("Digite a razão: ");
-                                    PH.setRazao(scanner.nextInt());
+                                    ph1.setRazao(scanner.nextInt());
                                     System.out.print("Digite o número de termos: ");
                                     int numTermos = scanner.nextInt();
                                     System.out.print("Agora, digite qual o resultado do Termo Geral obtido em seus cálculos: ");
                                     int resultado = scanner.nextInt();
+                                    listaPH.add(ph1);
 
-                                    if (PH.calcularTermoGeral(numTermos) == resultado) {
-                                        System.out.println("\nSeus cálculos estão corretos! O Termo Geral dessa progressão é "+ PH.calcularTermoGeral(numTermos) +".");
+                                    if (ph1.calcularTermoGeral(numTermos) == resultado) {
+                                        System.out.println("\nSeus cálculos estão corretos! O Termo Geral dessa progressão é "+ ph1.calcularTermoGeral(numTermos) +".");
                                     }
                                     else {
-                                        System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + PH.calcularTermoGeral(numTermos) + ".");
+                                        System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + ph1.calcularTermoGeral(numTermos) + ".");
                                     }
                                 break;
                                 case 2:
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    PH.setPrimeiroTermo(scanner.nextInt());
+                                    ph1.setPrimeiroTermo(scanner.nextInt());
                                     System.out.print("Digite a razão: ");
-                                    PH.setRazao(scanner.nextInt());
+                                    ph1.setRazao(scanner.nextInt());
                                     System.out.print("Digite o número de termos: ");
                                     numTermos = scanner.nextInt();
                                     System.out.print("Agora, digite qual o resultado da Soma dos Termos obtido em seus cálculos: ");
                                     resultado = scanner.nextInt();
+                                    listaPH.add(ph1);
 
-                                    if (PH.calcularSomaDosTermos(numTermos) == resultado) {
-                                        System.out.println("\nSeus cálculos estão corretos! A Soma dos Termos dessa progressão é "+ PH.calcularSomaDosTermos(numTermos) +".");
+                                    if (ph1.calcularSomaDosTermos(numTermos) == resultado) {
+                                        System.out.println("\nSeus cálculos estão corretos! A Soma dos Termos dessa progressão é "+ ph1.calcularSomaDosTermos(numTermos) +".");
                                     }
                                     else {
-                                        System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + PH.calcularSomaDosTermos(numTermos) + ".");
+                                        System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + ph1.calcularSomaDosTermos(numTermos) + ".");
                                     }
                                 break;
                             
@@ -320,6 +335,43 @@ public class MenuMatematica {
 
                 break;
                 case 4:
+                    System.out.println("Você selecionou: Visualizar progressões registradas. ");
+
+                    System.out.println("\nProgressões Aritméticas: \n");
+                    if (listaPA.isEmpty()) {
+                        System.out.println("Nenhuma PA registrada.");
+                    }
+                    else { 
+                        for (int i = 0; i < listaPA.size(); i++) {
+                            System.out.println("PA "+ (i+1) +": ");
+                            listaPA.get(i).mostrarDados();
+                        }
+                    }
+
+                    System.out.println("\nProgressões Geométricas: \n");
+                    if (listaPG.isEmpty()) {
+                        System.out.println("Nenhuma PG registrada.");
+                    }
+                    else { 
+                        for (int i = 0; i < listaPG.size(); i++) {
+                            System.out.println("PG "+ (i+1) +": ");
+                            listaPG.get(i).mostrarDados();
+                        }
+                    }
+
+                    System.out.println("\nProgressões Harmônicas: \n");
+                    if (listaPH.isEmpty()) {
+                        System.out.println("Nenhuma PH registrada.");
+                    }
+                    else { 
+                        for (int i = 0; i < listaPH.size(); i++) {
+                            System.out.println("PH "+ (i+1) +": ");
+                            listaPH.get(i).mostrarDados();
+                        }
+                    }
+
+                break;
+                case 5:
                     System.out.println("Você selecionou: Sair.");
                     System.out.println("Programa encerrado.");
                 break;
@@ -328,7 +380,7 @@ public class MenuMatematica {
                 break;
             }
 
-        } while (op != 4);
+        } while (op != 5);
 
         scanner.close();
     }
