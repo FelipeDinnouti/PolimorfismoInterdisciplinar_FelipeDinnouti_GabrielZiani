@@ -40,32 +40,13 @@ public class MenuMatematica {
                         System.out.println("\n\nAgora, serão apresentadas as definições de cada progressão e suas principais fórmulas.");
                         System.out.println("\n- Progressão Aritmética:");
                         PA.mostrarDefinicao();
-                        System.out.println("As principais fórmulas de uma progressão aritmética são a do cálculo do Termo Geral e a Soma dos Termos: ");
-                        System.out.println("\nTermo geral:      an = a1 + (n - 1) * r");
-                        System.out.println("Em que: 'an' é o termo geral, 'a1' é o primeiro termo, 'n' representa o número de termos e 'r' é a razão.");
-                        System.out.println("A razão em uma PA é a diferença constante entre termos consecutivos da sequência. Em outras palavras, é o valor que se adiciona a um termo para obter o seguinte.");
-                        System.out.println("\nSoma dos n termos: Sn = (a1 + an) * n / 2");
-                        System.out.println("Em que: 'Sn' é a soma dos termos, 'a1' é o primeiro termo, 'an' é o termo geral e 'n' representa o número de termos.");
 
                         System.out.println("\n\n\n- Progressão Geométrica:");
                         PG.mostrarDefinicao();
-                        System.out.println("As principais fórmulas de uma progressão geométrica são a do cálculo do Termo Geral e a Soma dos Termos: ");
-                        System.out.println("\nTermo geral:      an = a1 * q^(n - 1)");
-                        System.out.println("Em que: 'an' é o termo geral, 'a1' é o primeiro termo, 'n' representa o número de termos e 'q' é a razão.");
-                        System.out.println("A razão em uma PG é o fator constante pelo qual se multiplica um termo por outro para obter o seguinte.");
-                        System.out.println("\nSoma dos n termos: Sn = a1 * (q^n - 1) / (q - 1)");
-                        System.out.println("Em que: 'Sn' é a soma dos termos, 'a1' é o primeiro termo, 'n' representa o número de termos e 'q' é a razão.");
 
                         System.out.println("\n\n\n- Progressão Harmônica:");
                         PH.mostrarDefinicao();
-                        System.out.println("As principais fórmulas de uma progressão harmônica são a do cálculo do Termo Geral e a Soma dos Termos: ");
-                        System.out.println("\nTermo geral:      an = 1 / (a1 + (n - 1) * r)");
-                        System.out.println("Em que: 'an' é o termo geral, 'a1' é o primeiro termo, 'n' representa o número de termos e 'r' é a razão.");
-                        System.out.println("A razão em uma PH é a diferença constante entre termos consecutivos da sequência. Em outras palavras, é o valor que se adiciona a um termo para obter o seguinte.");
-                        System.out.println("\nSoma dos n termos: Sn = (1/q) * ln(((2n - 1) * q + 2a1) / (2a1 - q))");
-                        System.out.println("Em que: 'Sn' é a soma dos termos, 'a1' é o primeiro termo, 'n' representa o número de termos e 'q' é a razão.");
 
-                        
                     } else {
                         System.out.println("Programa encerrado.");
                         break;
@@ -83,29 +64,38 @@ public class MenuMatematica {
                     switch (questao1) {
                         case 1:
                             System.out.println("\nSabendo que o primeiro termo de uma PA é 3 e a razão é 5, qual é o 10º termo (n = 10)?");
+                            PA.setPrimeiroTermo(3);
+                            PA.setRazao(5);
+                            double resultado = PA.calcularTermoGeral(10);
+
                             System.out.print("Digite a resposta: ");
                             int resposta1 = scanner.nextInt();
 
                             
-                            if (resposta1 == 48) {
+                            if (resposta1 == resultado) {
                                 System.out.println("Resposta correta!");
-                                System.out.println("+48 metros escalados.");
+                                System.out.println("+" +resultado+ " metros escalados.");
                                 soma = soma + resposta1;
                             } else {
-                                System.out.println("Resposta incorreta. A resposta certa é: 48.");
+                                System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
                         break;
                         case 2:
                             System.out.println("\nQual é a soma dos 20 primeiros termos da PA em que a1 = 2 e a razão é 3 (n = 20)?");
+                            PA.setPrimeiroTermo(2);
+                            PA.setRazao(3);
+                            resultado = PA.calcularSomaDosTermos(20);
+
                             System.out.print("Digite a resposta: ");
                             resposta1 = scanner.nextInt();
-        
-                            if (resposta1 == 610) {
+
+                            if (resposta1 == resultado) {
                                 System.out.println("Resposta correta!");
-                                System.out.println("+610 metros escalados.");
+                                System.out.println("+" +resultado+ " metros escalados.");
                                 soma = soma + resposta1;
-                            } else {
-                                System.out.println("Resposta incorreta. A resposta certa é: 610.");
+                            } 
+                            else {
+                                System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
                         break;
                     }
@@ -113,28 +103,38 @@ public class MenuMatematica {
                     switch (questao2) {
                         case 1:
                             System.out.println("\nQual é o 5º termo da PG onde a1 = 2 e a razão é 3 (n = 5)?");
+                            PG.setPrimeiroTermo(2);
+                            PG.setRazao(3);
+                            double resultado = PG.calcularTermoGeral(5);
+
                             System.out.print("Digite a resposta: ");
                             int resposta2 = scanner.nextInt();
-        
-                            if (resposta2 == 162) {
+
+                            
+                            if (resposta2 == resultado) {
                                 System.out.println("Resposta correta!");
-                                System.out.println("+162 metros escalados.");
+                                System.out.println("+" +resultado+ " metros escalados.");
                                 soma = soma + resposta2;
                             } else {
-                                System.out.println("Resposta incorreta. A resposta certa é: 162.");
+                                System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
                         break;
                         case 2:
                             System.out.println("\nCalcule a soma dos 4 primeiros termos da PG com a1 = 1 e q = 2.");
+                            PG.setPrimeiroTermo(1);
+                            PG.setRazao(2);
+                            resultado = PG.calcularSomaDosTermos(4);
+
                             System.out.print("Digite a resposta: ");
                             resposta2 = scanner.nextInt();
-        
-                            if (resposta2 == 15) {
+
+                            
+                            if (resposta2 == resultado) {
                                 System.out.println("Resposta correta!");
-                                System.out.println("+15 metros escalados.");
+                                System.out.println("+" +resultado+ " metros escalados.");
                                 soma = soma + resposta2;
                             } else {
-                                System.out.println("Resposta incorreta. A resposta certa é: 15.");
+                                System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
                         break;
                     }
@@ -142,28 +142,38 @@ public class MenuMatematica {
                     switch (questao3) {
                         case 1:
                             System.out.println("\nQual é o 150º termo da PA em que o primeiro termo é 25 e a razão é 30 (n = 150)?");
+                            PA.setPrimeiroTermo(25);
+                            PA.setRazao(30);
+                            double resultado = PA.calcularTermoGeral(150);
+
                             System.out.print("Digite a resposta: ");
                             int resposta3 = scanner.nextInt();
-        
-                            if (resposta3 == 4495) {
+
+                            
+                            if (resposta3 == resultado) {
                                 System.out.println("Resposta correta!");
-                                System.out.println("+4495 metros escalados.");
+                                System.out.println("+" +resultado+ " metros escalados.");
                                 soma = soma + resposta3;
                             } else {
-                                System.out.println("Resposta incorreta. A resposta certa é: 4495.");
+                                System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
                         break;
                         case 2:
                             System.out.println("\nQual é o 7º termo da PG em que o primeiro termo é 3 e a razão é 4 (n = 7)?");
+                            PG.setPrimeiroTermo(3);
+                            PG.setRazao(4);
+                            resultado = PG.calcularTermoGeral(7);
+
                             System.out.print("Digite a resposta: ");
                             resposta3 = scanner.nextInt();
-        
-                            if (resposta3 == 12288) {
+
+                            
+                            if (resposta3 == resultado) {
                                 System.out.println("Resposta correta!");
-                                System.out.println("+12288 metros escalados.");
+                                System.out.println("+" +resultado+ " metros escalados.");
                                 soma = soma + resposta3;
                             } else {
-                                System.out.println("Resposta incorreta. A resposta certa é: 12288.");
+                                System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
                         break;
                     }
