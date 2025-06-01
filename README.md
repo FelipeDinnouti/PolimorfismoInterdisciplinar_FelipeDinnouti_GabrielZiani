@@ -16,7 +16,7 @@ Além da opção de estudar o conteúdo pela teoria, a partir da criação de um
 O sistema foi modelado se baseando nos princípios da **Programação Orientada a Objetos**. A estrutura foi dividida em classes com responsabilidades definidas, permitindo a reutilização e uma melhor organização do código. 
 O sistema possui um Menu principal para o usuário decidir qual disciplina ele deseja estudar, que redireciona para os Menus específicos de cada disciplina. Foram criadas também listas ArrayList para armazenar múltiplas progressões e dilatações.
 
-#### Classe Abstrata `Progressoes`
+### Classe Abstrata `Progressoes`
 A classe abstrata Progressoes define um modelo geral para as principais progressões matemáticas (Aritmética, Geométrica e Harmônica), contendo os atributos: 
 - razao
 - primeiroTermo
@@ -34,7 +34,7 @@ Ela é estendida pelas subclasses:
 
 Cada subclasse implementa as fórmulas específicas com base em sua lógica matemática.
 
-#### Classe Abstrata `DilatacaoTermica`
+### Classe Abstrata `DilatacaoTermica`
 A classe abstrata DilatacaoTermica define a estrutura para as diferentes dilatações térmicas, contendo os atributos:
 - variacaoTemperatura
 - coeficienteDeDilatacao
@@ -50,7 +50,7 @@ Ela é estendida pelas subclasses:
 
 Cada subclasse implementa as fórmulas específicas com base em sua lógica matemática.
 
-#### Classe Abstrata `OrganelasCelulares`
+### Classe Abstrata `OrganelasCelulares`
 A classe abstrata OrganelasCelulares define a estrutura para as diferentes organelas celulares, contendo os atributos:
 - nome
 - funcao
