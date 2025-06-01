@@ -25,7 +25,7 @@ public class MenuMatematica {
         do {
             System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre Progressões!");
             System.out.println("1 - Estudar matéria \n2 - Exercício: Trilha Progressiva do Everest \n3 - Verificador de Progressão \n4 - Visualizar progressões registradas \n5 - Sair");
-            System.out.print("\nDigite uma opção: ");
+            System.out.print("\n"+ ANSI_BLUE + "Selecione uma opção: " + ANSI_RESET);
             op = scanner.nextInt();
             scanner.nextLine();
             

@@ -14,7 +14,7 @@ public class MenuFisica {
                                 "2. Dilatação Superficial\n" +
                                 "3. Dilatação Volumétrica\n" +
                                 "0. Voltar ao menu principal\n" +
-                                "\nSelecione uma opção: ");
+                                "\n"+ ANSI_BLUE + "Selecione uma opção: " + ANSI_RESET);
 
             int op = Main.scanner.nextInt();
             DilatacaoTermica dilatacao = null;

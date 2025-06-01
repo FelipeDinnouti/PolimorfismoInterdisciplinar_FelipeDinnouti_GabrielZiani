@@ -27,7 +27,7 @@ public class Main {
                             "2. Física\n" +
                             "3. Matemática\n" +
                             "0. Sair\n" +
-                            "\nSelecione uma opção: ");
+                            "\n"+ ANSI_BLUE + "Selecione uma opção: " + ANSI_RESET);
         return scanner.nextInt();
     }
 
