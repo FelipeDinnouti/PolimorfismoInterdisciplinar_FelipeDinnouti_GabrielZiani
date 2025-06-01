@@ -22,4 +22,6 @@ public abstract class DilatacaoTermica {
 
     public abstract void mostrarDefinicao();
     public abstract double calcularDilatacao(double unidadeInicial);
+    public abstract void exercicio1();
+    public abstract void exercicio2();
 }

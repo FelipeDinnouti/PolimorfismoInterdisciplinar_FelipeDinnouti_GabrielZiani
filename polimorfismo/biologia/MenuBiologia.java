@@ -20,7 +20,7 @@ public class MenuBiologia {
         
         do {
             System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre Organelas Celulares!");
-            System.out.println("1. Estudar matéria \n2. Exercício 01: Mistério da Organela (Função) \n3. Exercício 02: Mistério da Organela (Localização) \n4 - Sair");
+            System.out.println("1 - Estudar matéria \n2 - Exercício: Mistério da Organela (Função) \n3 - Exercício: Mistério da Organela (Localização) \n4 - Sair");
             System.out.print("\nDigite uma opção: ");
             op = scanner.nextInt();
             scanner.nextLine();
