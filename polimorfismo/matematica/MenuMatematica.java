@@ -194,6 +194,8 @@ public class MenuMatematica {
         System.out.print("Digite o número de termos: ");
         numTermos = Input.readInt();
 
+        // Feito por Felipe Dinnouti & Gabriel Ziani
+
         // Instanciando de acordo com a escolha do usuário
         switch (tipoProgressao) {
             // Progressão Aritmética

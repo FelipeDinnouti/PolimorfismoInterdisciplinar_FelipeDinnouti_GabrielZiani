@@ -36,9 +36,11 @@ public class Main {
 
             boolean parar = false;
 
+            // Loop principal para o menu interativo
             do {
                 int op = escolherMateria();
 
+                // Escolha de matéria
                 switch (op) {
                     case 1:
                         biologia();

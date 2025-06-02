@@ -1,4 +1,6 @@
 package polimorfismo.matematica;
+
+// Classe mae abstrata para todas progressoes matemáticas 
 public abstract class Progressoes {
     // atributos
     private int razao;

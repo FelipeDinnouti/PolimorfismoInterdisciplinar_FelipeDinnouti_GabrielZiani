@@ -3,6 +3,7 @@ package polimorfismo.misc;
 import polimorfismo.misc.MyColor;
 import java.util.Scanner;
 
+// Classe utilitária com tratamento de exceções e sanitização do input.
 public class Input {
     public static Scanner scanner = new Scanner(System.in);
 	public static int readInt() {
@@ -37,7 +38,7 @@ public class Input {
 		String result = "";
 		
 		try {
-			result = scanner.nextLine().trim();
+			result = scanner.nextLine().trim(); // Sanitiza o input de texto
 		} catch(Exception e) {
 			System.out.println(MyColor.ANSI_RED + "Input Inválido" + MyColor.ANSI_RESET);
 		}
@@ -46,7 +47,7 @@ public class Input {
 	}
 	// Função simples pra que o usuário digite qualquer coisa antes de passar para um próximo estágio qualquer.
 	public static void confirmar() {
-		System.out.print("Pressione enter para prosseguir...");
+		System.out.print("\n\n\nPressione enter para prosseguir...");
 		scanner.nextLine();
 		System.out.print("\n");
 	}

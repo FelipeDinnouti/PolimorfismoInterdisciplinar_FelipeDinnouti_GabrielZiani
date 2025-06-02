@@ -42,50 +42,51 @@ public class MenuBiologia {
                     System.out.println("- Ribossomos;");
                     System.out.println("- Membrana Plasmática.");
                     System.out.println("Agora, estudaremos uma por uma, conhecendo suas principais funções e onde elas se localizam.");
-                    System.out.print("Deseja prosseguir? (S/N): ");
-                    String prosseguir = Input.readLine();
-                    // verificação se o usuário deseja prosseguir
-                    if (prosseguir.equals("S")) {
-                        System.out.println("Agora, serão apresentadas as funções e a localizacação de cada Organela Celular.");
+                    System.out.println("Serão apresentadas as funções e a localizacação de cada Organela Celular.");
 
-                        // chamando os métodos abstratos para cada organela
-                        System.out.println("- Mitocôndria:");
-                        mitocondria.mostrarFuncao();
-                        mitocondria.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        System.out.println("- Núcleo:");
-                        nucleo.mostrarFuncao();
-                        nucleo.mostrarLocalizacao();
+                    // chamando os métodos abstratos para cada organela
+                    System.out.println(MyColor.ANSI_PURPLE + "\n\n\n- Mitocôndria:"+ MyColor.ANSI_RESET);
+                    mitocondria.mostrarFuncao();
+                    mitocondria.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        System.out.println("- Retículo Endoplasmático Rugoso:");
-                        rer.mostrarFuncao();
-                        rer.mostrarLocalizacao();
+                    System.out.println(MyColor.ANSI_PURPLE +  "\n\n\n- Núcleo:"+ MyColor.ANSI_RESET);
+                    nucleo.mostrarFuncao();
+                    nucleo.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        System.out.println("- Retículo Endoplasmático Liso:");
-                        rel.mostrarFuncao();
-                        rel.mostrarLocalizacao();
+                    System.out.println(MyColor.ANSI_PURPLE +  "\n\n\n- Retículo Endoplasmático Rugoso:"+ MyColor.ANSI_RESET);
+                    rer.mostrarFuncao();
+                    rer.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        System.out.println("- Complexo de Golgi (Complexo Golgiense):");
-                        golgi.mostrarFuncao();
-                        golgi.mostrarLocalizacao();
+                    System.out.println(MyColor.ANSI_PURPLE +  "\n\n\n- Retículo Endoplasmático Liso:"+ MyColor.ANSI_RESET);
+                    rel.mostrarFuncao();
+                    rel.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        System.out.println("- Lisossomos:");
-                        lisossomo.mostrarFuncao();
-                        lisossomo.mostrarLocalizacao();
+                    System.out.println(MyColor.ANSI_PURPLE +  "\n\n\n- Complexo de Golgi (Complexo Golgiense):"+ MyColor.ANSI_RESET);
+                    golgi.mostrarFuncao();
+                    golgi.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        System.out.println("- Ribossomos:");
-                        ribossomo.mostrarFuncao();
-                        ribossomo.mostrarLocalizacao();
+                    System.out.println( MyColor.ANSI_PURPLE + "\n\n\n- Lisossomos:"+ MyColor.ANSI_RESET);
+                    lisossomo.mostrarFuncao();
+                    lisossomo.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        System.out.println("- Membrana Plasmática:");
-                        membrana.mostrarFuncao();
-                        membrana.mostrarLocalizacao();
+                    System.out.println(MyColor.ANSI_PURPLE + "\n\n\n- Ribossomos:" + MyColor.ANSI_RESET);
+                    ribossomo.mostrarFuncao();
+                    ribossomo.mostrarLocalizacao();
+                    Input.confirmar();
 
-                        Input.confirmar();
-                    } else {
-                        System.out.println(MyColor.ANSI_RED + "Voltando ao menu principal..." + MyColor.ANSI_RESET);
-                        break;
-                    }
+                    System.out.println(MyColor.ANSI_PURPLE + "\n\n\n- Membrana Plasmática:" + MyColor.ANSI_RESET);
+                    membrana.mostrarFuncao();
+                    membrana.mostrarLocalizacao();
+
+                    Input.confirmar();
                     
                 break;
                 case 2:
