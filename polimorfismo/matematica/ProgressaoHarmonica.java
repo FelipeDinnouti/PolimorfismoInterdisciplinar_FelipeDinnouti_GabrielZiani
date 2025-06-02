@@ -19,7 +19,7 @@ public class ProgressaoHarmonica extends Progressoes {
     };
     @Override
     public double calcularTermoGeral(int numTermos) {
-        System.out.print(String.format("1/((%d) + ((%d - 1) * %d))", getPrimeiroTermo(), numTermos, getRazao()));
+//        System.out.print(String.format("1/((%d) + ((%d - 1) * %d))", getPrimeiroTermo(), numTermos, getRazao()));
         return 1.0/((getPrimeiroTermo()) + ((numTermos - 1) * getRazao()));
     };
     @Override
