@@ -14,7 +14,7 @@ Além da opção de estudar o conteúdo pela teoria, a partir da criação de um
 ## Modelagem
 
 O sistema foi modelado se baseando nos princípios da **Programação Orientada a Objetos**. A estrutura foi dividida em classes com responsabilidades definidas, permitindo a reutilização e uma melhor organização do código. 
-O sistema possui um Menu principal para o usuário decidir qual disciplina ele deseja estudar, que redireciona para os Menus específicos de cada disciplina. Foram criadas também listas ArrayList para armazenar múltiplas progressões e dilatações.
+O sistema possui um Menu principal para o usuário decidir qual disciplina ele deseja estudar, que redireciona para os Menus específicos de cada disciplina. Foram criadas também listas ArrayList para armazenar múltiplas progressões.
 
 ### Classe Abstrata `Progressoes`
 A classe abstrata Progressoes define um modelo geral para as principais progressões matemáticas (Aritmética, Geométrica e Harmônica), contendo os atributos: 
