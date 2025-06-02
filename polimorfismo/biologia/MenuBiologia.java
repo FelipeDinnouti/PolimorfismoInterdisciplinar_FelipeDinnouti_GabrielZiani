@@ -1,11 +1,12 @@
 package polimorfismo.biologia;
+
+import polimorfismo.misc.MyColor;
+import polimorfismo.misc.Input;   
 import java.util.Random;
-import java.util.Scanner;
 
 public class MenuBiologia {
     public static void menu () {
         // criação do objeto scanner e random
-        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int op;
 
@@ -21,11 +22,10 @@ public class MenuBiologia {
 
         // loop para o menu
         do {
-            System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre Organelas Celulares!");
-            System.out.println("1 - Estudar matéria \n2 - Exercício: Mistério da Organela (Função) \n3 - Exercício: Mistério da Organela (Localização) \n4 - Sair");
-            System.out.print("\nDigite uma opção: ");
-            op = scanner.nextInt();
-            scanner.nextLine();
+            System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre" + MyColor.ANSI_PURPLE + " Organelas Celulares!" + MyColor.ANSI_RESET);
+            System.out.println("1 - Estudar matéria \n2 - Exercício: Mistério da Organela (Função) \n3 - Exercício: Mistério da Organela (Localização) \n0 - Sair");
+            System.out.print(MyColor.ANSI_RED + "\nDigite uma opção: " + MyColor.ANSI_RESET);
+            op = Input.readInt();
             
             // switch case com base na opção que o usuário digitou
             switch (op) {
@@ -43,7 +43,7 @@ public class MenuBiologia {
                     System.out.println("- Membrana Plasmática.");
                     System.out.println("Agora, estudaremos uma por uma, conhecendo suas principais funções e onde elas se localizam.");
                     System.out.print("Deseja prosseguir? (S/N): ");
-                    String prosseguir = scanner.nextLine();
+                    String prosseguir = Input.readLine();
                     // verificação se o usuário deseja prosseguir
                     if (prosseguir.equals("S")) {
                         System.out.println("Agora, serão apresentadas as funções e a localizacação de cada Organela Celular.");
@@ -80,8 +80,10 @@ public class MenuBiologia {
                         System.out.println("- Membrana Plasmática:");
                         membrana.mostrarFuncao();
                         membrana.mostrarLocalizacao();
+
+                        Input.confirmar();
                     } else {
-                        System.out.println("Programa encerrado.");
+                        System.out.println(MyColor.ANSI_RED + "Voltando ao menu principal..." + MyColor.ANSI_RESET);
                         break;
                     }
                     
@@ -99,7 +101,7 @@ public class MenuBiologia {
                             System.out.println("Sou essencial para a célula. Meu papel é gerar energia através de um processo chamado respiração celular.");
                             System.out.println("Graças a mim, a célula tem energia suficiente para realizar suas atividades.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            String organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            String organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("mitocôndria") || organelaNome.equalsIgnoreCase("mitocondria")) {
@@ -107,13 +109,15 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: mitocôndria.");
                             }
-                        break;
+
+                            Input.confirmar();
+                            break;
                         case 2:
                         
                             System.out.println("Eu guardo o material genético da célula, o DNA.");
                             System.out.println("Coordeno as atividades celulares, como a síntese de proteínas e o crescimento.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("núcleo") || organelaNome.equalsIgnoreCase("nucleo")) {
@@ -121,13 +125,14 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: núcleo.");
                         }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 3:
 
                             System.out.println("Sou uma rede de membranas com ribossomos aderidos.");
                             System.out.println("Minha função principal é a produção de proteínas.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("retículo endoplasmático rugoso") || organelaNome.equalsIgnoreCase("reticulo endoplasmatico rugoso")) {
@@ -135,13 +140,15 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: retículo endoplasmático rugoso.");
                             }
-                        break;
+
+                            Input.confirmar();
+                            break;
                         case 4:
 
                             System.out.println("Sou uma rede de membranas, mas sem ribossomos.");
                             System.out.println("Produzo lipídios e ajudo a desintoxicar a célula.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("retículo endoplasmático liso") || organelaNome.equalsIgnoreCase("reticulo endoplasmatico liso")) {
@@ -149,12 +156,14 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: retículo endoplasmático liso.");
                             }
-                        break;
+
+                            Input.confirmar();
+                            break;
                         case 5:
                             System.out.println("Recebo proteínas e lipídios para modificá-los e enviá-los para outras partes da célula.");
                             System.out.println("Sou fundamental para a secreção celular.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("complexo de golgi") || organelaNome.equalsIgnoreCase("complexo golgiense")) {
@@ -162,12 +171,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: complexo de golgi.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 6:
                             System.out.println("Sou responsável pela digestão e destruição de resíduos e partes velhas da célula.");
                             System.out.println("Contenho enzimas que degradam substâncias.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("lisossomo") || organelaNome.equalsIgnoreCase("lisossomos")) {
@@ -175,12 +185,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: lisossomo.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 7:
                             System.out.println("Sou pequenas estruturas sem membrana que produzem proteínas.");
                             System.out.println("Posso estar livres no citoplasma ou presos ao retículo endoplasmático.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("ribossomos") || organelaNome.equalsIgnoreCase("ribossomo")) {
@@ -188,12 +199,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: ribossomo.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 8:
                             System.out.println("Sou uma estrutura que envolve a célula, controlando a entrada e saída de substâncias.");
                             System.out.println("Sou fundamental para manter o equilíbrio interno da célula.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("membrana plasmática") || organelaNome.equalsIgnoreCase("membrana plasmatica")) {
@@ -201,6 +213,7 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: membrana plasmática.");
                             }
+                            Input.confirmar();
                         break;
                     }
 
@@ -219,7 +232,7 @@ public class MenuBiologia {
                         
                             System.out.println("Localizo-me dentro do citoplasma, envolvida por uma dupla membrana, e sou o centro energético da célula.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            String organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            String organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("mitocôndria") || organelaNome.equalsIgnoreCase("mitocondria")) {
@@ -227,12 +240,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: mitocôndria.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 2:
                         
                             System.out.println("Estou localizada dentro da célula, delimitada por uma membrana dupla, e contenho o material genético (DNA).");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("núcleo") || organelaNome.equalsIgnoreCase("nucleo")) {
@@ -240,12 +254,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: núcleo.");
                         }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 3:
 
                             System.out.println("Fico próximo ao núcleo e produzo proteínas.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("retículo endoplasmático rugoso") || organelaNome.equalsIgnoreCase("reticulo endoplasmatico rugoso")) {
@@ -253,12 +268,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: retículo endoplasmático rugoso.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 4:
 
                             System.out.println("Sou uma rede de membranas lisa, dispersa no citoplasma, e não possuo ribossomos.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("retículo endoplasmático liso") || organelaNome.equalsIgnoreCase("reticulo endoplasmatico liso")) {
@@ -266,11 +282,12 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: retículo endoplasmático liso.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 5:
                             System.out.println("Sou formado por pilhas de sacos membranosos, localizados próximos ao núcleo e ao retículo endoplasmático.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("complexo de golgi") || organelaNome.equalsIgnoreCase("complexo golgiense")) {
@@ -278,11 +295,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: complexo golgiense.");
                             }
-                        break;
+
+                            Input.confirmar();                        
+                            break;
                         case 6:
                             System.out.println("Localizo-me dentro da célula e realizo a digestão de resíduos.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("lisossomo") || organelaNome.equalsIgnoreCase("lisossomos")) {
@@ -290,11 +309,13 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: lisossomo.");
                             }
-                        break;
+                            
+                            Input.confirmar();
+                            break;
                         case 7:
                             System.out.println("Sou estruturas pequenas, presentes tanto livres no citoplasma quanto aderidas ao retículo endoplasmático.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("ribossomos") || organelaNome.equalsIgnoreCase("ribossomo")) {
@@ -302,11 +323,12 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: ribossomo.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 8:
                             System.out.println("Sou uma fina camada que envolve toda a célula, controlando a entrada e saída de substâncias.");
                             System.out.print("Quem sou eu? Digite o nome da organela: ");
-                            organelaNome = scanner.nextLine().trim(); // trim remove os espaços em branco
+                            organelaNome = Input.readLine(); // trim remove os espaços em branco
 
                             // verificação de entrada
                             if (organelaNome.equalsIgnoreCase("membrana plasmática") || organelaNome.equalsIgnoreCase("membrana plasmatica")) {
@@ -314,21 +336,20 @@ public class MenuBiologia {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: membrana plasmática.");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                     }
-                break;
-                case 4:
+                    break;
+                case 0:
                     System.out.println("Você selecionou: Sair.");
-                    System.out.println("Programa encerrado.");
-                break;
+                    System.out.println(MyColor.ANSI_RED + "Voltando ao menu principal..." + MyColor.ANSI_RESET);
+                    return;
                 default:
-                    System.out.println("Opção Inválida.");
-                    System.out.println("--------------------------------------------");
-                break;
+                    System.out.println(MyColor.ANSI_RED + "Opção Inválida." + MyColor.ANSI_RESET);
+                    break;
+                
             }
 
         } while (op != 4);
-
-        scanner.close();
     }
 }

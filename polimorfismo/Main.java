@@ -7,28 +7,18 @@ import polimorfismo.matematica.MenuMatematica;
 import polimorfismo.matematica.ProgressaoHarmonica;
 import polimorfismo.biologia.MenuBiologia;
 import polimorfismo.fisica.MenuFisica;
+import polimorfismo.misc.MyColor;
+import polimorfismo.misc.Input;
 
-public class Main {
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
-
-    public static Scanner scanner = new Scanner(System.in);
-    
+public class Main {    
     public static int escolherMateria() {
-        System.out.print("Bem vindo ao sistema educional" + ANSI_PURPLE + " Zinnouti! " + ANSI_RESET + "Matérias disponíveis\n" + 
+        System.out.print("\n\n\nBem vindo ao sistema educional" + MyColor.ANSI_PURPLE + " Zinnouti! " + MyColor.ANSI_RESET + "Matérias disponíveis\n" + 
                             "1. Biologia\n" +
                             "2. Física\n" +
                             "3. Matemática\n" +
                             "0. Sair\n" +
-                            "\n"+ ANSI_BLUE + "Selecione uma opção: " + ANSI_RESET);
-        return scanner.nextInt();
+                            "\n"+ MyColor.ANSI_BLUE + "Selecione uma opção: " + MyColor.ANSI_RESET);
+        return Input.readInt();
     }
 
     static void biologia() {
@@ -42,6 +32,7 @@ public class Main {
     }
     
     public static void main(String[] args) {
+            System.out.println("Iniciando o Programa...");
 
             boolean parar = false;
 
@@ -59,13 +50,15 @@ public class Main {
                         matematica();
                         break;
                     case 0:
-                        
+                        parar = true;
                         break;
                     default:
                         System.out.println("Opção inválida.");
                         break;
                 }
             } while (!parar);
-            
+        
+        System.out.println("\n\n\nSaindo...");
+        Input.scanner.close();       
     }
 }

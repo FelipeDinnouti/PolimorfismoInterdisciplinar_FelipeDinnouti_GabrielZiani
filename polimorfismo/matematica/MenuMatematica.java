@@ -1,13 +1,14 @@
 package polimorfismo.matematica;
 
+import polimorfismo.misc.MyColor;
+import polimorfismo.misc.Input;
+
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class MenuMatematica {
     public static void menu () {
         // criação do objeto scanner e random
-        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int op;
 
@@ -23,11 +24,10 @@ public class MenuMatematica {
         
         // loop para o menu
         do {
-            System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre Progressões!");
-            System.out.println("1 - Estudar matéria \n2 - Exercício: Trilha Progressiva do Everest \n3 - Verificador de Progressão \n4 - Visualizar progressões registradas \n5 - Sair");
-            System.out.print("\n"+ ANSI_BLUE + "Selecione uma opção: " + ANSI_RESET);
-            op = scanner.nextInt();
-            scanner.nextLine();
+            System.out.println("\n\n\nVamos estudar e treinar os conhecimentos adquiridos sobre" + MyColor.ANSI_PURPLE + " Progressões!" + MyColor.ANSI_RESET);
+            System.out.println("1 - Estudar matéria \n2 - Exercício: Trilha Progressiva do Everest \n3 - Verificador de Progressão \n4 - Visualizar progressões registradas \n0 - Sair");
+            System.out.print("\n"+ MyColor.ANSI_BLUE + "Selecione uma opção: " + MyColor.ANSI_RESET);
+            op = Input.readInt();
             
             // switch case baseado na opcao que o usuário digitou
             switch (op) {
@@ -40,7 +40,7 @@ public class MenuMatematica {
                     System.out.println("- Progressão Harmônica.");
                     System.out.println("Agora, estudaremos uma por uma, conhecendo suas principais aplicações e fórmulas.");
                     System.out.print("Deseja prosseguir? (S/N): ");
-                    String prosseguir = scanner.nextLine();
+                    String prosseguir = Input.readLine();
 
                     // verificação se o usuário deseja prosseguir
                     if (prosseguir.equals("S")) {
@@ -57,13 +57,14 @@ public class MenuMatematica {
                         PH.mostrarDefinicao();
 
                     } else {
-                        System.out.println("Programa encerrado.");
-                        break;
+                        System.out.println(MyColor.ANSI_RED + "Voltando ao menu principal..." + MyColor.ANSI_RESET);
+                        return;
                     }
-                    
-                break;
+
+                    Input.confirmar();
+                    break;
                 case 2:
-                    System.out.println("Você selecionou: Exercício 01 - Trilha Progressiva do Everest");
+                    System.out.println("Você selecionou: Exercício - Trilha Progressiva do Everest");
                     System.out.println("Neste exercício, você deverá calcular os problemas de PA e PG para conseguir alcançar o topo do Monte Everest. \nLeia atentamente cada questão e digite o resultado final da equação. O resultado final será a quantidade de metros que você subirá no monte, caso tenha acertado. ");
                     // utilizando o random para sortear um número entre 1 e 2, que é correspondente à questão que será apresentada para o usuário
                     int questao1 = random.nextInt(2) + 1;
@@ -81,7 +82,7 @@ public class MenuMatematica {
                             double resultado = PA.calcularTermoGeral(10);
 
                             System.out.print("Digite a resposta: ");
-                            int resposta1 = scanner.nextInt();
+                            int resposta1 = Input.readInt();
 
                             // verifica se a resposta digitada pelo usuário equivale à resposta correta
                             if (resposta1 == resultado) {
@@ -91,7 +92,9 @@ public class MenuMatematica {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
-                        break;
+
+                            Input.confirmar();
+                            break;
                         case 2:
                             System.out.println("\nQual é a soma dos 20 primeiros termos da PA em que a1 = 2 e a razão é 3 (n = 20)?");
                             // definindo os atributos utilizados na questão
@@ -100,7 +103,7 @@ public class MenuMatematica {
                             resultado = PA.calcularSomaDosTermos(20);
 
                             System.out.print("Digite a resposta: ");
-                            resposta1 = scanner.nextInt();
+                            resposta1 = Input.readInt();
 
                             // verifica se a resposta digitada pelo usuário equivale à resposta correta
                             if (resposta1 == resultado) {
@@ -111,7 +114,8 @@ public class MenuMatematica {
                             else {
                                 System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                     }
 
                     switch (questao2) {
@@ -123,7 +127,7 @@ public class MenuMatematica {
                             double resultado = PG.calcularTermoGeral(5);
 
                             System.out.print("Digite a resposta: ");
-                            int resposta2 = scanner.nextInt();
+                            int resposta2 = Input.readInt();
 
                             // verifica se a resposta digitada pelo usuário equivale à resposta correta
                             if (resposta2 == resultado) {
@@ -133,7 +137,8 @@ public class MenuMatematica {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 2:
                             System.out.println("\nCalcule a soma dos 4 primeiros termos da PG com a1 = 1 e q = 2.");
                             // definindo os atributos utilizados na questão
@@ -142,7 +147,7 @@ public class MenuMatematica {
                             resultado = PG.calcularSomaDosTermos(4);
 
                             System.out.print("Digite a resposta: ");
-                            resposta2 = scanner.nextInt();
+                            resposta2 = Input.readInt();
 
                             // verifica se a resposta digitada pelo usuário equivale à resposta correta
                             if (resposta2 == resultado) {
@@ -152,7 +157,9 @@ public class MenuMatematica {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
-                        break;
+                            
+                            Input.confirmar();
+                            break;
                     }
 
                     switch (questao3) {
@@ -164,7 +171,7 @@ public class MenuMatematica {
                             double resultado = PA.calcularTermoGeral(150);
 
                             System.out.print("Digite a resposta: ");
-                            int resposta3 = scanner.nextInt();
+                            int resposta3 = Input.readInt();
 
                             // verifica se a resposta digitada pelo usuário equivale à resposta correta
                             if (resposta3 == resultado) {
@@ -174,7 +181,8 @@ public class MenuMatematica {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
-                        break;
+                            Input.confirmar();
+                            break;
                         case 2:
                             System.out.println("\nQual é o 7º termo da PG em que o primeiro termo é 3 e a razão é 4 (n = 7)?");
                             // definindo os atributos utilizados na questão
@@ -183,7 +191,7 @@ public class MenuMatematica {
                             resultado = PG.calcularTermoGeral(7);
 
                             System.out.print("Digite a resposta: ");
-                            resposta3 = scanner.nextInt();
+                            resposta3 = Input.readInt();
 
                             // verifica se a resposta digitada pelo usuário equivale à resposta correta
                             if (resposta3 == resultado) {
@@ -193,7 +201,9 @@ public class MenuMatematica {
                             } else {
                                 System.out.println("Resposta incorreta. A resposta certa é: "+resultado+".");
                             }
-                        break;
+                            
+                            Input.confirmar();
+                            break;
                     }
 
                     // mostra a quantidade de metros escalados com base na soma dos resultados corretos digitados pelo usuário, informando se ele atingiu o topo ou não
@@ -205,13 +215,14 @@ public class MenuMatematica {
                         System.out.println("Infelizmente você não conseguiu alcançar o topo do Monte Everest, mas chegou muito perto, parabéns!");
                     }
 
-                break;
+                    Input.confirmar();
+                    break;
                 case 3:
                     System.out.println("Você selecionou: Verificador de Progressão. ");
                     System.out.println("Neste exercício, você poderá verificar se seus cálculos relacionados a progressões estão corretos! \nVocê deverá selecionar o tipo de progressão, qual tipo de cálculo deseja executar e os valores necessários.");
                     
                     System.out.print("\nQual o tipo de progressão relacionado ao seu cálculo? (Para Aritmética: '1' / Para Geométrica: '2' / Para Harmônica: '3'): ");
-                    int tipoProgressao = scanner.nextInt();
+                    int tipoProgressao = Input.readInt();
                     
                     // switch case baseado no tipo de progressão
                     switch (tipoProgressao) {
@@ -219,20 +230,20 @@ public class MenuMatematica {
                             // instancia um objeto para armazenar os dados da progressão a ser verificada
                             ProgressaoAritmetica pa1 = new ProgressaoAritmetica(0,0);
                             System.out.print("Digite o tipo de cálculo realizado (Cálculo do Termo Geral: '1' / Soma dos Termos: '2'): ");
-                            int tipoCalculo = scanner.nextInt();
+                            int tipoCalculo = Input.readInt();
 
                             // switch case baseado no tipo de cálculo realizado
                             switch (tipoCalculo) {
                                 case 1:
                                     // definindo os atributos utilizados na verificação
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    pa1.setPrimeiroTermo(scanner.nextInt());
+                                    pa1.setPrimeiroTermo(Input.readInt());
                                     System.out.print("Digite a razão: ");
-                                    pa1.setRazao(scanner.nextInt());
+                                    pa1.setRazao(Input.readInt());
                                     System.out.print("Digite o número de termos: ");
-                                    int numTermos = scanner.nextInt();
+                                    int numTermos = Input.readInt();
                                     System.out.print("Agora, digite qual o resultado do Termo Geral obtido em seus cálculos: ");
-                                    int resultado = scanner.nextInt();
+                                    int resultado = Input.readInt();
                                     listaPA.add(pa1); // adiciona esse objeto na lista de progressões
 
                                     // verifica se o resultado digitado pelo usuário equivale ao resultado correto (após a execução dos métodos)
@@ -242,18 +253,20 @@ public class MenuMatematica {
                                     else {
                                         System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + pa1.calcularTermoGeral(numTermos) + ".");
                                     }
-                                break;
+
+                                    Input.confirmar();
+                                    break;
                                 case 2:
                                     // definindo os atributos utilizados na verificação
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    pa1.setPrimeiroTermo(scanner.nextInt());
+                                    pa1.setPrimeiroTermo(Input.readInt());
                                     System.out.print("Digite a razão: ");
-                                    pa1.setRazao(scanner.nextInt());
+                                    pa1.setRazao(Input.readInt());
                                     System.out.print("Digite o número de termos: ");
-                                    numTermos = scanner.nextInt();
+                                    numTermos = Input.readInt();
                                     pa1.calcularTermoGeral(numTermos);
                                     System.out.print("Agora, digite qual o resultado da Soma dos Termos obtido em seus cálculos: ");
-                                    resultado = scanner.nextInt();
+                                    resultado = Input.readInt();
                                     listaPA.add(pa1); // adiciona esse objeto na lista de progressões
 
                                     // verifica se o resultado digitado pelo usuário equivale ao resultado correto (após a execução dos métodos)
@@ -263,30 +276,32 @@ public class MenuMatematica {
                                     else {
                                         System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + pa1.calcularSomaDosTermos(numTermos) + ".");
                                     }
-                                break;
-                            
+                                
+                                    Input.confirmar();
+                                    break;
                                 default:
-                                break;
+                                    System.out.println(MyColor.ANSI_RED + "Opção Inválida" + MyColor.ANSI_RESET);
+                                    break;
                             }
                         break;
                         case 2:
                             // instancia um objeto para armazenar os dados da progressão a ser verificada
                             ProgressaoGeometrica pg1 = new ProgressaoGeometrica(0,0);
                             System.out.print("Digite o tipo de cálculo realizado (Cálculo do Termo Geral: '1' / Soma dos Termos: '2'): ");
-                            tipoCalculo = scanner.nextInt();
+                            tipoCalculo = Input.readInt();
 
                             // switch case baseado no tipo de cálculo realizado
                             switch (tipoCalculo) {
                                 case 1:
                                     // definindo os atributos utilizados na verificação
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    pg1.setPrimeiroTermo(scanner.nextInt());
+                                    pg1.setPrimeiroTermo(Input.readInt());
                                     System.out.print("Digite a razão: ");
-                                    pg1.setRazao(scanner.nextInt());
+                                    pg1.setRazao(Input.readInt());
                                     System.out.print("Digite o número de termos: ");
-                                    int numTermos = scanner.nextInt();
+                                    int numTermos = Input.readInt();
                                     System.out.print("Agora, digite qual o resultado do Termo Geral obtido em seus cálculos: ");
-                                    int resultado = scanner.nextInt();
+                                    int resultado = Input.readInt();
                                     listaPG.add(pg1); // adiciona esse objeto na lista de progressões
 
                                     // verifica se o resultado digitado pelo usuário equivale ao resultado correto (após a execução dos métodos)
@@ -296,17 +311,19 @@ public class MenuMatematica {
                                     else {
                                         System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + pg1.calcularTermoGeral(numTermos) + ".");
                                     }
-                                break;
+
+                                    Input.confirmar();
+                                    break;
                                 case 2:
                                     // definindo os atributos utilizados na verificação
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    pg1.setPrimeiroTermo(scanner.nextInt());
+                                    pg1.setPrimeiroTermo(Input.readInt());
                                     System.out.print("Digite a razão: ");
-                                    pg1.setRazao(scanner.nextInt());
+                                    pg1.setRazao(Input.readInt());
                                     System.out.print("Digite o número de termos: ");
-                                    numTermos = scanner.nextInt();
+                                    numTermos = Input.readInt();
                                     System.out.print("Agora, digite qual o resultado da Soma dos Termos obtido em seus cálculos: ");
-                                    resultado = scanner.nextInt();
+                                    resultado = Input.readInt();
                                     listaPG.add(pg1); // adiciona esse objeto na lista de progressões
 
                                     // verifica se o resultado digitado pelo usuário equivale ao resultado correto (após a execução dos métodos)
@@ -316,30 +333,30 @@ public class MenuMatematica {
                                     else {
                                         System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + pg1.calcularSomaDosTermos(numTermos) + ".");
                                     }
-                                break;
-                            
+                                    Input.confirmar();
+                                    break;  
                                 default:
-                                break;
+                                    break;
                             }
                         break;
                         case 3:
                             // instancia um objeto para armazenar os dados da progressão a ser verificada
                             ProgressaoHarmonica ph1 = new ProgressaoHarmonica(0,0);
                             System.out.print("Digite o tipo de cálculo realizado (Cálculo do Termo Geral: '1' / Soma dos Termos: '2'): ");
-                            tipoCalculo = scanner.nextInt();
+                            tipoCalculo = Input.readInt();
 
                             // switch case baseado no tipo de cálculo realizado
                             switch (tipoCalculo) {
                                 case 1:
                                     // definindo os atributos utilizados na verificação
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    ph1.setPrimeiroTermo(scanner.nextInt());
+                                    ph1.setPrimeiroTermo(Input.readInt());
                                     System.out.print("Digite a razão: ");
-                                    ph1.setRazao(scanner.nextInt());
+                                    ph1.setRazao(Input.readInt());
                                     System.out.print("Digite o número de termos: ");
-                                    int numTermos = scanner.nextInt();
+                                    int numTermos = Input.readInt();
                                     System.out.print("Agora, digite qual o resultado do Termo Geral obtido em seus cálculos: ");
-                                    int resultado = scanner.nextInt();
+                                    int resultado = Input.readInt();
                                     listaPH.add(ph1); // adiciona esse objeto na lista de progressões
 
                                     // verifica se o resultado digitado pelo usuário equivale ao resultado correto (após a execução dos métodos)
@@ -349,17 +366,18 @@ public class MenuMatematica {
                                     else {
                                         System.out.println("Seu cálculo está incorreto! O valor do Termo Geral é " + ph1.calcularTermoGeral(numTermos) + ".");
                                     }
-                                break;
+                                    Input.confirmar();
+                                    break;
                                 case 2:
                                     // definindo os atributos utilizados na verificação
                                     System.out.print("\nDigite o primeiro termo: ");
-                                    ph1.setPrimeiroTermo(scanner.nextInt());
+                                    ph1.setPrimeiroTermo(Input.readInt());
                                     System.out.print("Digite a razão: ");
-                                    ph1.setRazao(scanner.nextInt());
+                                    ph1.setRazao(Input.readInt());
                                     System.out.print("Digite o número de termos: ");
-                                    numTermos = scanner.nextInt();
+                                    numTermos = Input.readInt();
                                     System.out.print("Agora, digite qual o resultado da Soma dos Termos obtido em seus cálculos: ");
-                                    resultado = scanner.nextInt();
+                                    resultado = Input.readInt();
                                     listaPH.add(ph1); // adiciona esse objeto na lista de progressões
                                     
                                     // verifica se o resultado digitado pelo usuário equivale ao resultado correto (após a execução dos métodos)
@@ -369,14 +387,14 @@ public class MenuMatematica {
                                     else {
                                         System.out.println("Seu cálculo está incorreto! O valor da Soma dos Termos é " + ph1.calcularSomaDosTermos(numTermos) + ".");
                                     }
-                                break;
-                            
+                                    Input.confirmar();
+                                    break;
                                 default:
-                                break;
+                                    break;
                             }
                         break;
                         default:
-                            System.out.println("Opção Inválida.");
+                            System.out.println(MyColor.ANSI_RED + "Opção Inválida" + MyColor.ANSI_RESET);
                         break;
                     }
 
@@ -421,17 +439,15 @@ public class MenuMatematica {
                     }
 
                 break;
-                case 5:
+                case 0:
                     System.out.println("Você selecionou: Sair.");
-                    System.out.println("Programa encerrado.");
-                break;
+                    System.out.println(MyColor.ANSI_RED + "Voltando ao menu principal..." + MyColor.ANSI_RESET);
+                    return;
                 default:
-                    System.out.println("Opção Inválida.");
-                break;
+                    System.out.println(MyColor.ANSI_RED + "Opção inválida." + MyColor.ANSI_RESET);
+                    break;
             }
 
-        } while (op != 5);
-
-        scanner.close();
+        } while (op != 0);
     }
 }

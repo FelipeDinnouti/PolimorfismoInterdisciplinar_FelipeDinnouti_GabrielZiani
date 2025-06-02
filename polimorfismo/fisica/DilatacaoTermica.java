@@ -24,4 +24,5 @@ public abstract class DilatacaoTermica {
     // métodos abstratos
     public abstract void mostrarDefinicao();
     public abstract double calcularDilatacao(double unidadeInicial);
+    public abstract void aplicarExercicio();
 }
